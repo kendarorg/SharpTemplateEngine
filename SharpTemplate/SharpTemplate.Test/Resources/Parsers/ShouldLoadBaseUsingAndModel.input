@@ -1,0 +1,11 @@
+﻿<#model# System.DateTime#>
+<#using#Microsoft.VisualStudio.TestTools.UnitTesting #>
+<#using# SharpTemplate.Test.Parsers#>
+<#base# SharpParserTest#>
+<#
+	if(model.Now()==null){
+		throw new Exception("An exception");
+	}else{
+#>aaa<#
+	}
+#>
