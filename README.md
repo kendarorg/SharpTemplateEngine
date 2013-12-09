@@ -69,10 +69,10 @@ namespace TestNamespace
 		
 		}
 
-		public List<string> MethodToInvoke()
+		public List&lt;string> MethodToInvoke()
 		{
-			var result = new List<string>();
-			for(int i = 0;i<10;i++){
+			var result = new List&lt;string>();
+			for(int i = 0;i&lt;10;i++){
 				result.Add(i.ToString());
 			}
 			return result;
