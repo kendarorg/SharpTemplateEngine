@@ -6,9 +6,6 @@ If it would be needed to generate files in runtime, these classes can be used in
 The target is to have a system like the one used by ASP.NET to compile the Razor templates into class. If you need it you could use these class as Razor classes :) I will add a specific post about this in the near future!
 The documentation can be found on [Kendar.org](http://kendar.org/?p=/dotnet/sharptemplate).
 
-
-
-
 #### Keywords
 
 * &lt;&#35;using&#35; name.space &#35;&gt;: add using to template builder class
@@ -116,7 +113,7 @@ To create the template the compilation utils must be used, for example (see the 
 		var instanceFinal = Activator.CreateInstance(compileSimpleObjectAsm.FullName, "TestNamespace.ResultingClass").Unwrap();
 		var method = instanceFinal.GetType().GetMethod("MethodToInvoke");
 		
-		List<string> result = method.Invoke(instanceFinal, new object[] { }) as List<string>;
+		List&lt;string> result = method.Invoke(instanceFinal, new object[] { }) as List&lt;string>;
 </pre>		
 
 * First the template is loaded.
