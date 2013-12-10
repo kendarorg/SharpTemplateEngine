@@ -200,12 +200,6 @@ Given the temporary path in wich the library will write the dll
 * Add a "log if debug" flag for log files to AppDomainCompiler and SourceCompiler
 * Inside the log show what files had been discarded
 
-### Licensing
-
-This is distributed with NO WARRANTY and under the terms of the GNU GPL and PHP licenses. If you use it a notice or some credit would be nice.
-
-You can get a copy of the GNU GPL at http://www.gnu.org/copyleft/gpl.html
-
 ### Download
 
 See [kendar.org](http://www.kendar.org/ "Kendar.org") for the latest changes.
