@@ -13,16 +13,17 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
-
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Parsers
 {
-	public class FailObjectAd : ILoadedClass
+	/// <summary>
+	/// Possible blocks generated inside the sharp parser class
+	/// </summary>
+	internal enum ParserBlockType
 	{
-		public string NotImplemented()
-		{
-			
-		}
+		Code,
+		Direct,
+		Using,
+		Base,
+		Model
 	}
 }

@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SharpTemplate.TEst")]
+[assembly: AssemblyTitle("SharpTemplate")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Kendar.org")]
-[assembly: AssemblyProduct("SharpTemplate.TEst")]
-[assembly: AssemblyCopyright("Copyright © Kendar.org 2013")]
+[assembly: AssemblyProduct("SharpTemplate")]
+[assembly: AssemblyCopyright("Copyright ©  2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8a398d55-3198-4006-a65c-2c9353974f86")]
+[assembly: Guid("b6f0e482-bfb4-411a-96c6-aa2e94334451")]
 
 // Version information for an assembly consists of the following four values:
 //

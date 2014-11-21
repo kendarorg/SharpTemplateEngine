@@ -13,16 +13,20 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
+using System;
 
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Compilers
 {
-	public class FailObjectAd : ILoadedClass
+	/// <summary>
+	/// Single source descriptor.
+	/// Uset to pass the data for a single file between AppDomains
+	/// </summary>
+	[Serializable]
+	public class SourceDescriptor : MarshalByRefObject
 	{
-		public string NotImplemented()
-		{
-			
-		}
+		public string OnlyNamespace;
+		public string OnlyClass;
+		public string ClassName;
+		public string ClassSource;
 	}
 }

@@ -13,16 +13,22 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
+using System;
+using System.Collections.Generic;
+using System.Runtime.Remoting;
 
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Compilers
 {
-	public class FailObjectAd : ILoadedClass
+	public interface ISourceCompilerDescriptor
 	{
-		public string NotImplemented()
-		{
-			
-		}
+		IEnumerable<string> Assemblies { get; }
+		IEnumerable<SourceDescriptor> Sources { get; }
+		string AddFile(string nameSpace, string name, string source);
+		void Dispose();
+		void AddAssembly(string assembly);
+		void CopyTo(ISourceCompilerDescriptor d);
+		object GetLifetimeService();
+		object InitializeLifetimeService();
+		ObjRef CreateObjRef(Type requestedType);
 	}
 }

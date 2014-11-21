@@ -13,16 +13,15 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
-
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Parsers
 {
-	public class FailObjectAd : ILoadedClass
+	/// <summary>
+	/// The interface implemented by the parser
+	/// </summary>
+	public interface ISharpResult
 	{
-		public string NotImplemented()
-		{
-			
-		}
+		void Execute(object modelAsObject);
+		void Write(string text, bool addCrLf = false);
+		string Content { get; set; }
 	}
 }

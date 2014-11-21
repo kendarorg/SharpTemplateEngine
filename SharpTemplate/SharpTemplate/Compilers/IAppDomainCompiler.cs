@@ -13,16 +13,26 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
+using System;
+using System.Collections.Generic;
+using System.Runtime.Remoting;
 
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Compilers
 {
-	public class FailObjectAd : ILoadedClass
+	/// <summary>
+	/// Compiler interface
+	/// </summary>
+	public interface IAppDomainCompiler
 	{
-		public string NotImplemented()
-		{
-			
-		}
+		List<string> Errors { get; }
+
+		void Initialize(int bestEffort, string assemblyName, string assemblyPath,
+				ISourceCompilerDescriptor compilerDescriptor, string tempPath);
+
+		string Compile(bool log=false);
+		void Dispose();
+		object GetLifetimeService();
+		object InitializeLifetimeService();
+		ObjRef CreateObjRef(Type requestedType);
 	}
 }

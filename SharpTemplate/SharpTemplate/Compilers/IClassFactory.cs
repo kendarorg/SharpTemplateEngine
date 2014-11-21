@@ -13,16 +13,10 @@
 // ===========================================================
 
 
-using System.Reflection;
-using SharpTemplate.Test.Compilers;
-
-namespace SharpTemplate.Test.Resources.Compilers
+namespace SharpTemplate.Compilers
 {
-	public class FailObjectAd : ILoadedClass
-	{
-		public string NotImplemented()
-		{
-			
-		}
-	}
+    public interface IClassFactory
+    {
+        TData CreateInstance<TData>(string type, params object[] pars);
+    }
 }
