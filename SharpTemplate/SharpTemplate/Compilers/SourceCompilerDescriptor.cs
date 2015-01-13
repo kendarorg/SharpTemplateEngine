@@ -15,6 +15,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace SharpTemplate.Compilers
 {
@@ -81,9 +82,10 @@ namespace SharpTemplate.Compilers
 		/// <param name="assembly"></param>
 		public void AddAssembly(string assembly)
 		{
-			if (!_assemblies.ContainsKey(assembly))
+			var fileName = Path.GetFileName(assembly);
+			if (!string.IsNullOrWhiteSpace(fileName) && !_assemblies.ContainsKey(fileName))
 			{
-				_assemblies.Add(assembly, assembly);
+				_assemblies.Add(fileName, assembly);
 			}
 		}
 

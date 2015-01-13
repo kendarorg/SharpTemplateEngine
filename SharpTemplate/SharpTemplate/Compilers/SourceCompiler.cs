@@ -172,26 +172,27 @@ namespace Testn
 							.Replace("file:///", ""));
 
 			assemblies.AddRange(new List<string>(AppDomain.CurrentDomain.GetAssemblies().
-																					 Where((a) => !a.IsDynamic).Select((a) => a.CodeBase
-					 .Replace("file:\\", "")
-					 .Replace("file:///", ""))));
+																					 Where((a) => !a.IsDynamic).Select((a) =>
+																					 {
+																						 var uri = new Uri(a.CodeBase);
+																						 return uri.LocalPath;
+																					 })));
 			assemblies.Reverse();
 
-			//TODO: HashSet
-			var dict = new Dictionary<string, string>();
+			var dict = new HashSet<string>();
 			for (var i = assemblies.Count - 1; i >= 0; i--)
 			{
 				var asmPath = Path.GetFileName(assemblies[i]);
 				if (asmPath != null)
 				{
 					asmPath = asmPath.ToLowerInvariant();
-					if (dict.ContainsKey(asmPath))
+					if (dict.Contains(asmPath))
 					{
 						assemblies.RemoveAt(i);
 					}
 					else
 					{
-						dict.Add(asmPath, "");
+						dict.Add(asmPath);
 					}
 				}
 			}
